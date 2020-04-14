@@ -130,6 +130,7 @@ static const struct usb_interface_descriptor audio_control_iface[] = {
       .bInterfaceSubClass = USB_AUDIO_SUBCLASS_CONTROL,
       .bInterfaceProtocol = 0,
       .iInterface = 0,
+
       .extra = &audio_control_functional_descriptors,
       .extralen = sizeof(audio_control_functional_descriptors),
   },
@@ -262,8 +263,8 @@ static const struct usb_config_descriptor config = {
 static char usb_serial_number[25]; /* 12 bytes of desig and a \0 */
 
 static const char *usb_strings[] = {
-  "libopencm3.org",
-  "MIDI demo",
+  "bjsowa",
+  "MIDI Piano",
   usb_serial_number,
 };
 
