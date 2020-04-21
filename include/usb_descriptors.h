@@ -142,9 +142,9 @@ static const struct usb_interface_descriptor audio_control_iface[] = {
 static const struct {
   struct usb_midi_header_descriptor header;
   struct usb_midi_in_jack_descriptor in_embedded;
-  struct usb_midi_in_jack_descriptor in_external;
+  //   struct usb_midi_in_jack_descriptor in_external;
   struct usb_midi_out_jack_descriptor out_embedded;
-  struct usb_midi_out_jack_descriptor out_external;
+  //   struct usb_midi_out_jack_descriptor out_external;
 } __attribute__((packed)) midi_streaming_functional_descriptors = {
     /* Table B-6: Midi Adapter Class-specific MS Interface Descriptor */
     .header = {
@@ -164,14 +164,14 @@ static const struct {
         .iJack = 0x00,
     },
     /* Table B-8: MIDI Adapter MIDI IN Jack Descriptor (External) */
-    .in_external = {
-        .bLength = sizeof(struct usb_midi_in_jack_descriptor),
-        .bDescriptorType = USB_AUDIO_DT_CS_INTERFACE,
-        .bDescriptorSubtype = USB_MIDI_SUBTYPE_MIDI_IN_JACK,
-        .bJackType = USB_MIDI_JACK_TYPE_EXTERNAL,
-        .bJackID = 0x02,
-        .iJack = 0x00,
-    },
+    // .in_external = {
+    //     .bLength = sizeof(struct usb_midi_in_jack_descriptor),
+    //     .bDescriptorType = USB_AUDIO_DT_CS_INTERFACE,
+    //     .bDescriptorSubtype = USB_MIDI_SUBTYPE_MIDI_IN_JACK,
+    //     .bJackType = USB_MIDI_JACK_TYPE_EXTERNAL,
+    //     .bJackID = 0x02,
+    //     .iJack = 0x00,
+    // },
     /* Table B-9: MIDI Adapter MIDI OUT Jack Descriptor (Embedded) */
     .out_embedded = {
         .head = {
@@ -193,23 +193,23 @@ static const struct {
         },
     },
     /* Table B-10: MIDI Adapter MIDI OUT Jack Descriptor (External) */
-    .out_external = {
-        .head = {
-            .bLength = sizeof(struct usb_midi_out_jack_descriptor),
-            .bDescriptorType = USB_AUDIO_DT_CS_INTERFACE,
-            .bDescriptorSubtype = USB_MIDI_SUBTYPE_MIDI_OUT_JACK,
-            .bJackType = USB_MIDI_JACK_TYPE_EXTERNAL,
-            .bJackID = 0x04,
-            .bNrInputPins = 1,
-        },
-        .source[0] = {
-            .baSourceID = 0x01,
-            .baSourcePin = 0x01,
-        },
-        .tail = {
-            .iJack = 0x00,
-        },
-    },
+    // .out_external = {
+    //     .head = {
+    //         .bLength = sizeof(struct usb_midi_out_jack_descriptor),
+    //         .bDescriptorType = USB_AUDIO_DT_CS_INTERFACE,
+    //         .bDescriptorSubtype = USB_MIDI_SUBTYPE_MIDI_OUT_JACK,
+    //         .bJackType = USB_MIDI_JACK_TYPE_EXTERNAL,
+    //         .bJackID = 0x04,
+    //         .bNrInputPins = 1,
+    //     },
+    //     .source[0] = {
+    //         .baSourceID = 0x01,
+    //         .baSourcePin = 0x01,
+    //     },
+    //     .tail = {
+    //         .iJack = 0x00,
+    //     },
+    // },
 };
 
 /*
