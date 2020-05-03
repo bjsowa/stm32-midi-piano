@@ -3,6 +3,8 @@ ColumnLimit: 80
 AlignAfterOpenBracket: DontAlign
 AlignTrailingComments: true
 AlignOperands: true
+AllowShortBlocksOnASingleLine: false
+AllowShortFunctionsOnASingleLine: Empty
 BinPackParameters: true
 BreakBeforeBraces: Custom
 BraceWrapping:
