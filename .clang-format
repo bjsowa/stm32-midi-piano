@@ -5,6 +5,7 @@ AlignTrailingComments: true
 AlignOperands: true
 AllowShortBlocksOnASingleLine: false
 AllowShortFunctionsOnASingleLine: Empty
+AllowShortIfStatementsOnASingleLine: false
 BinPackParameters: true
 BreakBeforeBraces: Custom
 BraceWrapping:
