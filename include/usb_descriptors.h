@@ -13,7 +13,7 @@
 /*
  * Table B-1: MIDI Adapter Device Descriptor
  */
-static const struct usb_device_descriptor dev = {
+const struct usb_device_descriptor dev = {
   .bLength = USB_DT_DEVICE_SIZE,
   .bDescriptorType = USB_DT_DEVICE,
   .bcdUSB = 0x0200,  /* was 0x0110 in Table B-1 example descriptor */
@@ -33,7 +33,7 @@ static const struct usb_device_descriptor dev = {
 /*
  * Midi specific endpoint descriptors.
  */
-static const struct usb_midi_endpoint_descriptor midi_bulk_endp = {
+const struct usb_midi_endpoint_descriptor midi_bulk_endp = {
   /* Table B-14: MIDI Adapter Class-specific Bulk IN Endpoint Descriptor */
   .head = {
       .bLength = sizeof(struct usb_midi_endpoint_descriptor),
@@ -49,7 +49,7 @@ static const struct usb_midi_endpoint_descriptor midi_bulk_endp = {
 /*
  * Standard endpoint descriptors
  */
-static const struct usb_endpoint_descriptor bulk_endp = {
+const struct usb_endpoint_descriptor bulk_endp = {
   /* Table B-13: MIDI Adapter Standard Bulk IN Endpoint Descriptor */
   .bLength = USB_DT_ENDPOINT_SIZE,
   .bDescriptorType = USB_DT_ENDPOINT,
@@ -65,7 +65,7 @@ static const struct usb_endpoint_descriptor bulk_endp = {
 /*
  * Table B-4: MIDI Adapter Class-specific AC Interface Descriptor
  */
-static const struct {
+const struct {
   struct usb_audio_header_descriptor_head header_head;
   struct usb_audio_header_descriptor_body header_body;
 } __attribute__((packed)) audio_control_functional_descriptors = {
@@ -87,7 +87,7 @@ static const struct {
 /*
  * Table B-3: MIDI Adapter Standard AC Interface Descriptor
  */
-static const struct usb_interface_descriptor audio_control_iface[] = {
+const struct usb_interface_descriptor audio_control_iface[] = {
   {
       .bLength = USB_DT_INTERFACE_SIZE,
       .bDescriptorType = USB_DT_INTERFACE,
@@ -107,7 +107,7 @@ static const struct usb_interface_descriptor audio_control_iface[] = {
 /*
  * Class-specific MIDI streaming interface descriptor
  */
-static const struct {
+const struct {
   struct usb_midi_header_descriptor header;
   struct usb_midi_in_jack_descriptor in_embedded;
 } __attribute__((packed)) midi_streaming_functional_descriptors = {
@@ -133,7 +133,7 @@ static const struct {
 /*
  * Table B-5: MIDI Adapter Standard MS Interface Descriptor
  */
-static const struct usb_interface_descriptor midi_streaming_iface[] = {
+const struct usb_interface_descriptor midi_streaming_iface[] = {
   {
       .bLength = USB_DT_INTERFACE_SIZE,
       .bDescriptorType = USB_DT_INTERFACE,
@@ -150,7 +150,7 @@ static const struct usb_interface_descriptor midi_streaming_iface[] = {
   },
 };
 
-static const struct usb_interface ifaces[] = {
+const struct usb_interface ifaces[] = {
   {
       .num_altsetting = 1,
       .altsetting = audio_control_iface,
@@ -164,7 +164,7 @@ static const struct usb_interface ifaces[] = {
 /*
  * Table B-2: MIDI Adapter Configuration Descriptor
  */
-static const struct usb_config_descriptor config = {
+const struct usb_config_descriptor config = {
   .bLength = USB_DT_CONFIGURATION_SIZE,
   .bDescriptorType = USB_DT_CONFIGURATION,
   .wTotalLength = 0,   /* can be anything, it is updated automatically
@@ -178,9 +178,9 @@ static const struct usb_config_descriptor config = {
   .interface = ifaces,
 };
 
-static char usb_serial_number[25]; /* 12 bytes of desig and a \0 */
+char usb_serial_number[25]; /* 12 bytes of desig and a \0 */
 
-static const char *usb_strings[] = {
+const char *usb_strings[] = {
   "bjsowa",
   "MIDI Piano",
   usb_serial_number,
