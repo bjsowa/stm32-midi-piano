@@ -1,0 +1,9 @@
+inputs:
+  - { type: "key", note: 44, button_gpio: "A0", scan_gpio: "B10" }
+  - { type: "key", note: 45, button_gpio: "A1", scan_gpio: "B10" }
+  - { type: "key", note: 46, button_gpio: "A2", scan_gpio: "B10" }
+  - { type: "key", note: 47, button_gpio: "A3", scan_gpio: "B10" }
+  - { type: "key", note: 48, button_gpio: "A4", scan_gpio: "B10" }
+  - { type: "key", note: 49, button_gpio: "A5", scan_gpio: "B10" }
+  - { type: "key", note: 50, button_gpio: "A6", scan_gpio: "B10" }
+  - { type: "key", note: 51, button_gpio: "A7", scan_gpio: "B10" }
